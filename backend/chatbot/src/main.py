@@ -38,13 +38,13 @@ async def get_input(send, receive, input_method="text"):
 
 async def assistant(send, receive, inventory_csv_url):
     """
-    Sends a single, merged welcome message from SAM AI.
+    Sends a single, merged welcome message from Buyya AI.
 
     Args:
         send: The WebSocket send function (e.g., from `websocket.send`).
     """
     welcome_message = (
-        "Hello there! I'm SAM AI, your friendly shopping assistant! 🛒\n\n"
+        "Hello there! I'm Buyya AI, your friendly shopping assistant! 🛒\n\n"
         "I can help you with:\n"
         "   • Finding products in our inventory\n"
         "   • Suggesting recipes and ingredients\n"
@@ -90,7 +90,6 @@ async def assistant(send, receive, inventory_csv_url):
             await send(json.dumps({"message":thank_you_response}))
             continue
 
-        await send(json.dumps({"message":"...Thinking..."}))
         parsed = extract_intent(query)
         intent = parsed.get("intent")
         product_data = parsed.get("product", "")
@@ -128,7 +127,6 @@ async def assistant(send, receive, inventory_csv_url):
         #             # speak_wrapper(alt)
         #             await send(alt)
         if intent == "product_search":
-            await send(json.dumps({"message":"...Searching inventory..."}))
             inventory_results = []
             sustainable_suggestions = []
             for product in products_to_process:
@@ -167,7 +165,6 @@ async def assistant(send, receive, inventory_csv_url):
                 await send(json.dumps({"message": sustainable_message, "buttons": []}))
 
         elif intent == "category_search":
-            await send(json.dumps({"message":"...Searching category..."}))
             category_query = (
                 " ".join(products_to_process)
                 if products_to_process and any(products_to_process)
@@ -331,12 +328,12 @@ async def assistant(send, receive, inventory_csv_url):
                 await send(json.dumps({"message":response_text}))
 
         elif intent == "greeting":
-            greeting_response = "Hello! I'm SAM AI, your shopping assistant. I can help you find products, suggest recipes, and recommend sustainable alternatives. What can I help you with today?"
+            greeting_response = "Hello! I'm Buyya AI, your shopping assistant. I can help you find products, suggest recipes, and recommend sustainable alternatives. What can I help you with today?"
             # speak_wrapper(greeting_response)
             await send(json.dumps({"message":greeting_response}))
 
         elif intent == "farewell":
-            farewell_response = "Goodbye! Thanks for shopping with SAM AI. Come back anytime you need help with products or recipes!"
+            farewell_response = "Goodbye! Thanks for shopping with Buyya AI. Come back anytime you need help with products or recipes!"
             # speak_wrapper(farewell_response)
             await send(json.dumps({"message":farewell_response}))
 

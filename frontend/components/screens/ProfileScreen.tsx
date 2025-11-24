@@ -66,7 +66,7 @@ const ProfileScreen = () => {
           </>
         ) : (
           <>
-            <Text style={styles.userName}>Welcome to SAM</Text>
+            <Text style={styles.userName}>Welcome to Buyya</Text>
             <Text style={styles.userEmail}>Sign in to access your account</Text>
           </>
         )}

@@ -38,12 +38,12 @@ const QRScannerScreen = () => {
     console.log('QR Code scanned:', { type, data });
     
     // More flexible QR code validation
-    if (data.toLowerCase().includes('walmart') || 
-        data.toLowerCase().includes('store') || 
+    if (data.toLowerCase().includes('buyya') || 
+        data.toLowerCase().includes('ai') || 
         data.startsWith('http')) {
       Alert.alert(
         'QR Code Scanned Successfully!',
-        `Scanned: ${data}\n\nOpening SAM Assistant...`,
+        `Scanned: ${data}\n\nOpening Buyya Assistant...`,
         [
           {
             text: 'Cancel',
@@ -147,10 +147,9 @@ const QRScannerScreen = () => {
             <Text style={styles.instructionsTitle}>How to use QR Scanner</Text>
             <View style={styles.qrCodeContainer}>
               <View style={styles.qrCodeFrame}>
-                <Text style={styles.walmartLabel}>Walmart Store</Text>
+                <Text style={styles.walmartLabel}>Buyya AI</Text>
                 <Text style={styles.qrCodeText}>
                   Scan QR codes for shopping assistance{'\n'}
-                  No order minimum from Walmart.com
                 </Text>
                 <View style={styles.qrCodePlaceholder}>
                   <Ionicons name="qr-code-outline" size={60} color="#666" />

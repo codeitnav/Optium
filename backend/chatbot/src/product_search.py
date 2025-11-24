@@ -213,8 +213,9 @@ async def search_inventory(product_name, send, receive, inventory_csv_url):
     else:
         # If no substring match and we detected a category, search within that category
         if detected_category:
-            category_results = search_by_category(detected_category, 5)
+            category_results = search_by_category(detected_category, inventory_csv_url)
             return f"I couldn't find '{product_name}' specifically, but here are some {detected_category.lower()} options:\n\n{category_results}"
+
 
         # Fuzzy match suggestions
         names = inventory["name"].tolist()

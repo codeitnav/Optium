@@ -4,13 +4,14 @@ import json
 from dotenv import load_dotenv
 
 load_dotenv()
-OPENROUTER_KEY = "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"
+OPENROUTER_KEY = "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"
+
 
 def extract_intent(query):
     headers = {
         "Authorization": f"Bearer {OPENROUTER_KEY}",
         "HTTP-Referer": "http://localhost",
-        "X-Title": "SAM-AI",
+        "X-Title": "Buyya-AI",
     }
 
     messages = [
@@ -73,7 +74,7 @@ Return a minified JSON object with no extra text or markdown.
     ]
 
     data = {
-        "model": "mistralai/mistral-7b-instruct",
+        "model": "mistralai/mistral-7b-instruct:0.2",
         "messages": messages,
     }
 
@@ -82,7 +83,14 @@ Return a minified JSON object with no extra text or markdown.
     )
 
     try:
-        content = response.json()["choices"][0]["message"]["content"]
+        resp = response.json()
+
+        if "choices" not in resp:
+            print("LLM Error Response:", resp)
+            return {"intent": "unknown", "product": "", "filter": ""}
+
+        content = resp["choices"][0]["message"]["content"]
+
         return json.loads(content)
     except Exception as e:
         print("LLM Error:", e)
@@ -93,7 +101,7 @@ def get_ai_recommendations(query):
     headers = {
         "Authorization": f"Bearer {OPENROUTER_KEY}",
         "HTTP-Referer": "http://localhost",
-        "X-Title": "SAM-AI",
+        "X-Title": "Buyya-AI",
     }
 
     messages = [
@@ -132,7 +140,7 @@ def format_recipe_response(recipe_details):
     headers = {
         "Authorization": f"Bearer {OPENROUTER_KEY}",
         "HTTP-Referer": "http://localhost",
-        "X-Title": "SAM-AI",
+        "X-Title": "Buyya-AI",
     }
 
     # Convert the dictionary to a JSON string for the prompt
@@ -218,7 +226,7 @@ def format_dish_ingredients_response(dish_name, ingredients_info):
     headers = {
         "Authorization": f"Bearer {OPENROUTER_KEY}",
         "HTTP-Referer": "http://localhost",
-        "X-Title": "SAM-AI",
+        "X-Title": "Buyya-AI",
     }
 
     ingredients_str = "\n".join(ingredients_info)

@@ -44,19 +44,19 @@ const LandingScreen = () => {
     },
     {
       id: "2",
-      name: "Walmart Supercenter 2",
+      name: "24/7 Groceries",
       address: "23, Main street",
       distance: "1.2 mi",
     },
     {
       id: "3",
-      name: "Walmart Supercenter 3",
+      name: "Jio Mart",
       address: "23, Main street",
       distance: "1.8 mi",
     },
     {
       id: "4",
-      name: "Walmart Supercenter 4",
+      name: "Fresh Farm Market",
       address: "23, Main street",
       distance: "2.1 mi",
     },
@@ -291,7 +291,7 @@ const LandingScreen = () => {
         >
           <Ionicons name="person-circle" size={32} color="#5dade2" />
         </TouchableOpacity>
-        <Text style={styles.headerTitle}>SAM</Text>
+        <Text style={styles.headerTitle}>Buyya</Text>
         <View style={styles.headerRight}>
           <TouchableOpacity
             style={[
@@ -355,7 +355,7 @@ const LandingScreen = () => {
         />
       </View>
 
-      {/* Walmart Cards Section */}
+      {/* Cards Section */}
       <View style={styles.cardsContainer}>
         <View style={styles.topCardsRow}>
           <TouchableOpacity style={[styles.walmartCard, styles.smallCard]}>
@@ -376,7 +376,7 @@ const LandingScreen = () => {
           </TouchableOpacity>
           <TouchableOpacity style={[styles.walmartCard, styles.smallCard]}>
             <ImageBackground
-              source={require("../../assets/images/walmart.jpg")}
+              source={require("../../assets/images/store2.jpeg")}
               style={styles.cardBackground}
               imageStyle={styles.cardBackgroundImage}
             >
@@ -393,7 +393,7 @@ const LandingScreen = () => {
         </View>
         <TouchableOpacity style={[styles.walmartCard, styles.largeCard]}>
           <ImageBackground
-            source={require("../../assets/images/walmart.jpg")}
+            source={require("../../assets/images/store3.jpeg")}
             style={styles.cardBackground}
             imageStyle={styles.cardBackgroundImage}
           >

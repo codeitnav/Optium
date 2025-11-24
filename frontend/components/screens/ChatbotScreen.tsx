@@ -17,7 +17,7 @@ import { SafeAreaView } from "react-native-safe-area-context"
 import { Ionicons } from "@expo/vector-icons"
 import { useRouter } from "expo-router"
 import WebSocketService, { type ChatMessage, type WebSocketMessage } from "@/utils/WebSocketService"
-import TypingIndicator from "../TypingIndicator" // Correct import path
+import TypingIndicator from "../TypingIndicator" 
 
 const ChatbotScreen = () => {
   const router = useRouter()
@@ -68,7 +68,7 @@ const ChatbotScreen = () => {
         setMessages([
           {
             id: "error-1",
-            text: "Unable to connect to SAM AI. Please check your internet connection and try again.",
+            text: "Unable to connect to Buyya AI. Please check your internet connection and try again.",
             isUser: false,
             timestamp: new Date(),
             error: true,
@@ -219,7 +219,7 @@ const ChatbotScreen = () => {
       setMessages([
         {
           id: "welcome-retry",
-          text: "Hello! I'm SAM, your shopping assistant. How can I help you today?",
+          text: "Hello! I'm Buyya, your shopping assistant. How can I help you today?",
           isUser: false,
           timestamp: new Date(),
         },
@@ -252,7 +252,7 @@ const ChatbotScreen = () => {
     return (
       <SafeAreaView style={styles.container}>
         <View style={styles.loadingContainer}>
-          <Text style={styles.loadingText}>Connecting to SAM AI...</Text>
+          <Text style={styles.loadingText}>Connecting to Buyya AI...</Text>
         </View>
       </SafeAreaView>
     )
@@ -267,7 +267,7 @@ const ChatbotScreen = () => {
         </TouchableOpacity>
         <View style={styles.headerCenter}>
           <TouchableOpacity onPress={showConnectionDebug}>
-            <Text style={styles.headerTitle}>SAM</Text>
+            <Text style={styles.headerTitle}>Buyya</Text>
           </TouchableOpacity>
           <View style={styles.connectionStatusContainer}>
             {!isConnected && (

@@ -236,20 +236,20 @@ def get_conversational_response(query):
     # Handle greetings (but only if they're not shopping queries)
     if is_greeting(query):
         responses = [
-            "Hello! I'm SAM AI, your shopping assistant. I can help you find products, suggest recipes, and recommend sustainable alternatives. What can I help you with today?",
-            "Hi there! Welcome to SAM AI. I'm here to help you with all your shopping needs - from finding products to discovering recipes. How can I assist you?",
-            "Hey! Great to see you. I'm SAM AI, and I specialize in helping with shopping, recipes, and finding eco-friendly alternatives. What are you looking for today?",
-            "Hello! I'm your friendly shopping assistant SAM AI. Whether you need products, recipes, or sustainable options, I'm here to help. What can I do for you?",
+            "Hello! I'm Buyya AI, your shopping assistant. I can help you find products, suggest recipes, and recommend sustainable alternatives. What can I help you with today?",
+            "Hi there! Welcome to Buyya AI. I'm here to help you with all your shopping needs - from finding products to discovering recipes. How can I assist you?",
+            "Hey! Great to see you. I'm Buyya AI, and I specialize in helping with shopping, recipes, and finding eco-friendly alternatives. What are you looking for today?",
+            "Hello! I'm your friendly shopping assistant Buyya AI. Whether you need products, recipes, or sustainable options, I'm here to help. What can I do for you?",
         ]
         return random.choice(responses)
 
     # Handle farewells
     if is_farewell(query):
         responses = [
-            "Goodbye! Thanks for shopping with SAM AI. Come back anytime you need help with products or recipes!",
+            "Goodbye! Thanks for shopping with Buyya AI. Come back anytime you need help with products or recipes!",
             "Take care! It was great helping you today. See you next time you need shopping assistance!",
             "Bye! Don't forget - I'm always here when you need help finding products or cooking ideas. Have a wonderful day!",
-            "See you later! Thanks for using SAM AI for your shopping needs. Happy shopping!",
+            "See you later! Thanks for using Buyya AI for your shopping needs. Happy shopping!",
         ]
         return random.choice(responses)
 
@@ -290,9 +290,9 @@ def is_personal_question(query):
 def get_personal_response():
     """Generate response for personal questions."""
     responses = [
-        "I'm SAM AI, your intelligent shopping assistant! I'm here to help you find products, discover recipes, and suggest sustainable alternatives. What can I help you shop for today?",
-        "I'm SAM AI - think of me as your personal shopping companion. I can help you search our inventory, find recipe ideas, and recommend eco-friendly products. How can I assist you?",
-        "I'm SAM AI, designed specifically to make your shopping experience better! I can help with product searches, recipe suggestions, and sustainable shopping choices. What are you looking for?",
-        "I'm SAM AI, your dedicated shopping assistant. My specialty is helping customers like you find exactly what they need, whether it's products, recipes, or eco-friendly alternatives. What can I help you with?",
+        "I'm Buyya AI, your intelligent shopping assistant! I'm here to help you find products, discover recipes, and suggest sustainable alternatives. What can I help you shop for today?",
+        "I'm Buyya AI - think of me as your personal shopping companion. I can help you search our inventory, find recipe ideas, and recommend eco-friendly products. How can I assist you?",
+        "I'm Buyya AI, designed specifically to make your shopping experience better! I can help with product searches, recipe suggestions, and sustainable shopping choices. What are you looking for?",
+        "I'm Buyya AI, your dedicated shopping assistant. My specialty is helping customers like you find exactly what they need, whether it's products, recipes, or eco-friendly alternatives. What can I help you with?",
     ]
     return random.choice(responses)

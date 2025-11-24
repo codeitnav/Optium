@@ -7,7 +7,8 @@ import os
 import sys
 import datetime
 
-sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), "..", "..")))
+sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), "..")))
+
 
 from chatbot.src.main import assistant
 
@@ -35,7 +36,7 @@ class ChatMessage(BaseModel):
 
 @api.get("/")
 def index():
-    return {"message": "Hello from the samAPI"}
+    return {"message": "Hello from the BuyyaAPI"}
 
 
 @api.websocket("/api/v1/ask-sam")
@@ -90,4 +91,3 @@ def add_chats(message: ChatMessage):
         return {"status": "success", "data": result.data}
     except Exception as e:
         raise HTTPException(status_code=500, detail=str(e))
-

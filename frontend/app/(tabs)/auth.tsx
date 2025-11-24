@@ -58,7 +58,6 @@ const AuthScreen = () => {
         if (!isLogin) {
           Alert.alert("Success", "Account created successfully! Please check your email to verify your account.")
         }
-        // Navigate back to profile after successful auth
         router.back()
       }
     } catch (error: any) {
@@ -100,7 +99,7 @@ const AuthScreen = () => {
             <TouchableOpacity style={styles.closeButton} onPress={() => router.back()}>
               <Ionicons name="close" size={24} color="#5dade2" />
             </TouchableOpacity>
-            <Text style={styles.appTitle}>SAM</Text>
+            <Text style={styles.appTitle}>Buyya</Text>
             <Text style={styles.subtitle}>{isLogin ? "Welcome back!" : "Create your account"}</Text>
           </View>
 
