@@ -4,7 +4,7 @@ import json
 from dotenv import load_dotenv
 
 load_dotenv()
-OPENROUTER_KEY = "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"
+OPENROUTER_KEY = os.getenv("OPENROUTER_KEY")
 
 
 def extract_intent(query):
